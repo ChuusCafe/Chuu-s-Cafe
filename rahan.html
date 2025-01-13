@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuu's Cafe</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #fceaff, #d2f5ff);
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #ff6699;
+        }
+
+        header {
+            padding: 50px 0;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .images-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 50px 20px;
+        }
+
+        .images-container img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .images-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .about-section {
+            display: none;
+            padding: 50px;
+        }
+
+        .about-section.active {
+            display: block;
+        }
+
+        .about-images-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: relative;
+        }
+
+        .about-images-container img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s, box-shadow 0.5s;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .about-images-container img:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-images-container img:nth-child(odd) {
+            transform: rotate(-5deg);
+        }
+
+        .about-images-container img:nth-child(even) {
+            transform: rotate(5deg);
+        }
+
+        .about-images-container img:hover {
+            transform: translateY(-10px) scale(1.1) rotate(0deg);
+        }
+
+        .order-section {
+            display: none;
+            padding: 50px;
+        }
+
+        .order-section.active {
+            display: block;
+        }
+
+        .order-section button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff6699;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .order-section button:hover {
+            background-color: #ff3366;
+        }
+
+        .contact-section {
+            display: none;
+            padding: 50px;
+        }
+
+        .contact-section.active {
+            display: block;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .contact-section a {
+            color: #ff6699;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+    <header id="home">
+        <h1>CHUU'S CAFE</h1>
+        <p>Since 2024</p>
+        <div class="images-container">
+            <img src="images/s-food1.png" alt="Decorative Image 1">
+            <img src="images/s-food2.png" alt="Decorative Image 2">
+            <img src="images/s-food4.png" alt="Decorative Image 3">
+            <img src="images/s-food5.png" alt="Decorative Image 4">
+            <img src="images/s-food4.png" alt="Decorative Image 5">
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <h2>Our Menu</h2>
+        <div class="about-images-container">
+            <img src="images/gambar1.jpg" alt="Menu Item 1" onclick="goToOrder('Menu Item 1')">
+            <img src="images/gambar2.jpg" alt="Menu Item 2" onclick="goToOrder('Menu Item 2')">
+            <img src="images/gambar3.jpg" alt="Menu Item 3" onclick="goToOrder('Menu Item 3')">
+            <img src="images/gambar4.jpg" alt="Menu Item 4" onclick="goToOrder('Menu Item 4')">
+            <img src="images/gambar5.jpg" alt="Menu Item 5" onclick="goToOrder('Menu Item 5')">
+            <img src="images/gambar6.jpg" alt="Menu Item 6" onclick="goToOrder('Menu Item 6')">
+            <img src="images/gambar7.jpg" alt="Menu Item 7" onclick="goToOrder('Menu Item 7')">
+            <img src="images/gambar8.jpg" alt="Menu Item 8" onclick="goToOrder('Menu Item 8')">
+            <img src="images/gambar9.jpg" alt="Menu Item 9" onclick="goToOrder('Menu Item 9')">
+            <img src="images/gambar10.jpg" alt="Menu Item 10" onclick="goToOrder('Menu Item 10')">
+        </div>
+    </section>
+
+    <section id="order" class="order-section">
+        <h2 id="order-title">Order</h2>
+        <button onclick="orderNow()">Pesan Sekarang</button>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="ryomakyu14@gmail.com">ryomakyu14@gmail.com</a></p>
+        <p>Phone: <a href="tel:085282583627">085282583627</a></p>
+        <p>jalan tipar, kota sukabumi, jawa barat</p>
+        <p>Follow us on social media:</p>
+        <p>
+            <a href="https://www.instagram.com/jaeyxdeliiij_" target="_blank">Instagram</a> 
+        </p>
+    </section>
+
+    <script>
+        function showSection(section) {
+            document.querySelectorAll('header, .about-section, .order-section, .contact-section').forEach(el => el.classList.remove('active'));
+            const target = document.getElementById(section);
+            if (target) {
+                target.classList.add('active');
+            }
+        }
+
+        function goToOrder(item) {
+            document.getElementById('order-title').textContent = `Pesan ${item}`;
+            showSection('order');
+        }
+
+        function orderNow() {
+            window.location.href = 'https://wa.me/6285282583627';
+        }
+    </script>
+</body>
+</html>
